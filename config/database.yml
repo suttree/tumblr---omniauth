@@ -1,0 +1,24 @@
+login: &login
+  adapter: mysql2
+  host: localhost
+  username: duncan
+  password: moriarty
+  encoding: utf8
+  collation: utf8_general_ci
+ 
+ 
+development:
+  database: burberry_tumblr_development
+  <<: *login
+ 
+test: &test
+  database: burberry_tumblr_development
+  <<: *login
+ 
+production:
+  database: burberry_tumblr_development
+  <<: *login
+ 
+cucumber:
+  <<: *test
+
